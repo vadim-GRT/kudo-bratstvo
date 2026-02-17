@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Наш зал",
+        "category": "hall",
+        "image": "images\/dojo-interior.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Групповая тренировка",
+        "category": "training",
+        "image": "images\/group-training.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Спарринг",
+        "category": "training",
+        "image": "images\/sparring.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Команда клуба",
+        "category": "team",
+        "image": "images\/team-photo.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Детская группа",
+        "category": "kids",
+        "image": "images\/kids-training.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Соревнования",
+        "category": "competition",
+        "image": "images\/gallery-01.jpg"
+    }
+]

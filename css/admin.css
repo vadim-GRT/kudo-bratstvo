@@ -1,0 +1,485 @@
+/* =================== */
+/* Админ-панель */
+/* =================== */
+.admin {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fb;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Сайдбар */
+.admin__sidebar {
+    width: 280px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.admin__logo {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.admin__logo img {
+    width: 40px;
+    height: auto;
+}
+
+.admin__logo span {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.admin__nav {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.admin__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.admin__nav-link span {
+    font-size: 1.2rem;
+}
+
+.admin__nav-link:hover {
+    background: #fff1f1;
+    color: #c72b2b;
+}
+
+.admin__nav-link.active {
+    background: #fff1f1;
+    color: #c72b2b;
+    border-left-color: #c72b2b;
+    font-weight: 600;
+}
+
+.admin__user {
+    padding: 20px 25px;
+    border-top: 1px solid #eef2f6;
+}
+
+.admin__user-name {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.admin__user-role {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Основной контент */
+.admin__main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+}
+
+.admin__tab {
+    display: none;
+}
+
+.admin__tab.active {
+    display: block;
+}
+
+.admin__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.admin__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+/* Кнопки */
+.admin__btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin__btn--primary {
+    background: #c72b2b;
+    color: white;
+}
+
+.admin__btn--primary:hover {
+    background: #a02020;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(199, 43, 43, 0.3);
+}
+
+.admin__btn--secondary {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.admin__btn--secondary:hover {
+    background: #e0e0e0;
+}
+
+.admin__btn--danger {
+    background: #dc3545;
+    color: white;
+}
+
+.admin__btn--danger:hover {
+    background: #bb2d3b;
+}
+
+/* Статистика */
+.admin__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.admin__stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin__stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #c72b2b;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.admin__stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Сетка галереи в админке */
+.admin__gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.admin__gallery-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.admin__gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin__gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.admin__gallery-info {
+    padding: 15px;
+}
+
+.admin__gallery-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.admin__gallery-category {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin__gallery-actions {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #eef2f6;
+}
+
+.admin__gallery-actions button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.admin__gallery-edit {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.admin__gallery-edit:hover {
+    background: #e0e0e0;
+}
+
+.admin__gallery-delete {
+    background: #fff1f1;
+    color: #c72b2b;
+}
+
+.admin__gallery-delete:hover {
+    background: #ffe0e0;
+}
+
+/* Модальные окна */
+.admin__modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin__modal.active {
+    display: flex;
+}
+
+.admin__modal-content {
+    background: white;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin__modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid #eef2f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin__modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    color: #333;
+}
+
+.admin__modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.3s;
+    line-height: 1;
+}
+
+.admin__modal-close:hover {
+    color: #c72b2b;
+}
+
+.admin__modal-body {
+    padding: 30px;
+}
+
+.admin__modal-footer {
+    padding: 25px 30px;
+    border-top: 1px solid #eef2f6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Формы в админке */
+.admin__form-group {
+    margin-bottom: 20px;
+}
+
+.admin__form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin__input,
+.admin__form-group input,
+.admin__form-group select,
+.admin__form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin__input:focus,
+.admin__form-group input:focus,
+.admin__form-group select:focus,
+.admin__form-group textarea:focus {
+    outline: none;
+    border-color: #c72b2b;
+    box-shadow: 0 0 0 3px rgba(199, 43, 43, 0.1);
+}
+
+.admin__form-hint {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Предпросмотр изображения */
+.admin__preview {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px dashed #e0e0e0;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin__preview img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Настройки */
+.admin__settings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.admin__settings-group {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin__settings-group h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.admin__settings-item {
+    margin-bottom: 20px;
+}
+
+.admin__settings-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .admin__sidebar {
+        width: 80px;
+    }
+    
+    .admin__logo span,
+    .admin__nav-link span:not(:first-child),
+    .admin__user {
+        display: none;
+    }
+    
+    .admin__nav-link {
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .admin__main {
+        margin-left: 80px;
+    }
+    
+    .admin__settings {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin__main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .admin__sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .admin__header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
